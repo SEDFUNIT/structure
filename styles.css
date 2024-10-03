@@ -7,7 +7,7 @@ body {
 
 .container {
     width: 100%; /* ใช้ความกว้างทั้งหมด */
-    max-width: 960px; /* ลดความกว้างสูงสุดลง 20% */
+    max-width: 1200px; /* ลดความกว้างสูงสุดลง 20% */
     margin: 0 auto;
     text-align: center;
     background-color: transparent; /* ลบพื้นหลังกล่อง container */
