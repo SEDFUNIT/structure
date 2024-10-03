@@ -1,116 +1,219 @@
 body {
-    font-family: 'Prompt', sans-serif;
-    background-color: transparent;
+    font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
+    background-color: transparent; /* ตั้งเป็น transparent เพื่อลบพื้นหลัง */
     margin: 0;
-    padding: 20px;
+    padding: 16px; /* ลด padding ลง 20% */
 }
 
 .container {
-    max-width: 1200px;
+    width: 100%; /* ใช้ความกว้างทั้งหมด */
+    max-width: 960px; /* ลดความกว้างสูงสุดลง 20% */
     margin: 0 auto;
     text-align: center;
-    padding: 20px;
+    background-color: transparent; /* ลบพื้นหลังกล่อง container */
+    border: none; /* ลบขอบ */
 }
 
 h1 {
+    font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
     color: #024b54;
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 28.8px; /* ลดฟอนต์ลง 20% */
+    margin-bottom: 4px; /* ลดระยะห่าง */
 }
 
 .top-position {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
+    justify-content: center; /* จัดกลางแนวนอน */
+    align-items: center; /* จัดกลางแนวตั้ง */
+    margin-bottom: 32px; /* ลดระยะห่าง */
 }
 
 .staff-cardgm {
-    text-align: center;
-    border-radius: 8px;
-    padding: 20px;
-    transition: transform 0.3s ease;
+    text-align: center; /* จัดตำแหน่งข้อความให้ตรงกลาง */
+    background-color: transparent; /* ถ้าต้องการให้เป็นพื้นหลังโปร่งใส */
+    border-radius: 8px; /* มุมกลม */
+    padding: 8px; /* ลดช่องว่างรอบๆ กล่อง */
+    transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงเมื่อ hover */
 }
 
 .staff-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
+    width: 180px; /* ลดความกว้างลง 20% */
+    height: 180px; /* ลดความสูงลง 20% */
+    border-radius: 50%; /* ทำให้ภาพเป็นวงกลม */
+    object-fit: cover; /* ทำให้ภาพไม่ผิดเพี้ยน */
+    margin-bottom: 12px; /* ลดระยะห่างระหว่างรูปภาพกับข้อความ */
 }
 
 .staff-cardgm:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* ขยายทั้งกล่องเมื่อ hover */
+}
+
+.staff-cardgm:hover .staff-photo {
+    transform: scale(1.05); /* ขยายภาพเมื่อ hover */
 }
 
 .group-structure {
     display: flex;
-    flex-wrap: wrap; /* ทำให้แถวหักกลับได้ */
-    justify-content: center;
-    margin: 0 -10px; /* ลด margin เพื่อให้กล่องอยู่ติดกัน */
+    justify-content: center; /* จัดกลาง */
+    grid-template-columns: repeat(4, 1fr); /* แบ่งเป็น 4 คอลัมน์ */
+    grid-gap: 0px; /* ลดระยะห่าง */
+    background: transparent; /* ลบพื้นหลังกล่อง group-structure */
+    border: none; /* ลบขอบ */
+    width: 100%; /* เพิ่มความกว้างให้เต็มพื้นที่ */
+    max-width: 1000px; /* ลดความกว้างสูงสุดลง 20% */
+    margin-left: -30px; /* ขยับศูนย์กลางไปทางซ้าย */
 }
 
 .group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px; /* ระยะห่างระหว่างกลุ่ม */
+    display: flex; /* ใช้ Flexbox สำหรับการจัดเรียง */
+    flex-direction: column; /* จัดเรียงในแนวตั้ง */
+    align-items: center; /* จัดให้เนื้อหาอยู่กลาง */
+    gap: 0px; /* ลดระยะห่างระหว่างกล่อง */
+    margin-top: 0px; /* ลดระยะห่างด้านบนให้เหลือ 0 */
+}
+
+.staff-row {
+    display: flex; /* ใช้ Flexbox เพื่อจัดเรียงกล่อง */
+    justify-content: space-between; /* จัดกล่องให้ห่างกัน */
+    margin-top: 0px;
 }
 
 .staff-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-    padding: 20px;
-    transition: transform 0.5s;
-    background: transparent;
-    border: none;
-    width: 100%; /* ใช้ความกว้างเต็ม */
-    max-width: 320px; /* กำหนดความกว้างสูงสุด */
-    margin: 10px; /* ระยะห่างระหว่างการ์ด */
+    display: flex; /* ใช้ Flexbox เพื่อจัดเรียงเนื้อหาในกล่อง */
+    flex-direction: column; /* จัดเรียงเนื้อหาในกล่องเป็นแนวตั้ง */
+    justify-content: center; /* จัดเนื้อหาให้อยู่กลาง */
+    align-items: center; /* จัดให้เนื้อหากลางแนวตั้ง */
+    border-radius: 20px; /* ทำให้มุมกล่องกลม */
+    box-shadow: none; /* ลบเงาที่สร้างขอบ */
+    padding: 12px; /* ลดระยะห่างภายในกล่อง */
+    transition: transform 0.5s; /* เพิ่มการเคลื่อนไหวเมื่อมีการ hover */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    background: transparent; /* ลบพื้นหลังกล่อง staff-card */
+    border: none; /* ลบขอบ */
+    height: 176px; /* ลดความสูงลง 20% */
+    width: 220px; /* ลดความกว้างลง 20% */
+    margin: 1px; /* ระยะห่างระหว่างการ์ด */
 }
 
 .staff-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* ขยายกล่องเมื่อ hover */
 }
 
-h2, h4, p {
+.staff-photo {
+    width: 96px; /* ลดความกว้างลง 20% */
+    height: 144px; /* ลดความสูงลง 20% */
+    border-radius: 30%;
+    margin-bottom: 0px;
+    object-fit: cover;
+}
+
+h4 {
+    font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
+    font-size: 15.2px; /* ลดฟอนต์ลง 20% */
     color: #006f7d;
-    margin: 5px 0;
+    margin-bottom: 8px; /* ลดระยะห่าง */
+}
+
+h2 {
+    font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
+    font-size: 20px; /* ลดฟอนต์ลง 20% */
+    color: #006f7d;
+    margin-bottom: 8px; /* ลดระยะห่าง */
+}
+
+p {
+    font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
+    color: #006f7d;
+    font-size: 14.4px; /* ลดฟอนต์ลง 20% */
+    margin: 0px 0;
+}
+
+p2 {
+    font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
+    color: #006f7d;
+    font-size: 12px; /* ลดฟอนต์ลง 20% */
+    margin: 0px 0;
+}
+
+p1 {
+    font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt */
+    color: #006f7d;
+    font-size: 20px; /* ลดฟอนต์ลง 20% */
+    margin: 0px 0;
 }
 
 /* ปรับขนาดการแสดงผลในหน้าจอที่เล็กลง */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 28px; /* ปรับขนาดหัวข้อ */
+    .group-structure {
+        grid-template-columns: 1fr; /* เปลี่ยนเป็นแถวเดี่ยวเมื่อหน้าจอเล็กลง */
     }
 
-    .staff-cardgm {
-        margin-bottom: 20px; /* เพิ่มระยะห่าง */
+    .staff-row {
+        flex-direction: column; /* แสดงพนักงานในแนวตั้งเมื่อหน้าจอเล็กลง */
     }
 
     .staff-photo {
-        width: 100px; /* ลดขนาดรูปภาพ */
-        height: 100px; /* ลดขนาดรูปภาพ */
-    }
-
-    .group-structure {
-        flex-direction: column; /* เปลี่ยนเป็นแถวแนวตั้ง */
-        align-items: center; /* จัดกลาง */
-    }
-
-    .staff-card {
-        max-width: 90%; /* ให้การ์ดไม่เกิน 90% */
+        width: 64px; /* ลดความกว้างลง 20% */
+        height: 64px; /* ลดความสูงลง 20% */
     }
 
     h2 {
-        font-size: 20px; /* ปรับขนาดข้อความ */
+        font-size: 14.4px; /* ลดฟอนต์ลง 20% */
     }
 
     p {
-        font-size: 14px; /* ปรับขนาดข้อความ */
+        font-size: 11.2px; /* ลดฟอนต์ลง 20% */
+    }
+}
+
+.group {
+    display: flex; /* ใช้ Flexbox สำหรับการจัดเรียง */
+    flex-direction: column; /* จัดเรียงในแนวตั้ง */
+    align-items: center; /* จัดให้เนื้อหาอยู่กลาง */
+    gap: 16px; /* ลดระยะห่างระหว่างกล่อง */
+}
+
+.staff-row {
+    display: grid; /* ใช้ Grid สำหรับการจัดเรียง */
+    grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 คอลัมน์ */
+    grid-gap: 12px; /* ลดระยะห่าง */
+    width: 100%; /* ใช้ความกว้างทั้งหมด */
+}
+
+.staff-card1 {
+    display: flex; /* ใช้ Flexbox ในการจัดเรียงเนื้อหาในกล่อง */
+    flex-direction: column; /* จัดเรียงเนื้อหาในกล่องเป็นแนวตั้ง */
+    justify-content: center; /* จัดเนื้อหาให้อยู่กลาง */
+    align-items: center; /* จัดให้เนื้อหากลางแนวตั้ง */
+    border-radius: 20px; /* มุมของกล่องจะโค้งมน */
+    padding: 4px; /* ลดระยะห่างภายในกล่อง */
+    margin: 4px; /* ลดระยะห่างระหว่างกล่องให้เหลือ 4px */
+    width: 240px; /* ลดความกว้างลง 20% */
+    background-color: transparent; /* เอาพื้นหลังออก */
+    box-shadow: none; /* เอาเงาออก */
+    transition: transform 0.2s; /* การเปลี่ยนแปลงที่ราบรื่นเมื่อมีการโฮเวอร์ */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+}
+
+.staff-card1 img {
+    border-radius: 15%; /* ทำให้ภาพกลม */
+    width: 100px; /* ลดความกว้างลง 20% */
+    height: 130px; /* ลดความสูงลง 20% */
+    object-fit: cover; /* ทำให้ภาพไม่ผิดเพี้ยน */
+}
+
+.staff-card1:hover {
+    transform: scale(1.05); /* ขยายกล่องเมื่อ hover */
+}
+
+@media (max-width: 768px) {
+    .staff-row {
+        display: flex; /* แสดงเป็น Flexbox */
+        flex-direction: column; /* แสดงในแนวตั้ง */
+    }
+
+    .staff-card1 {
+        width: 100%; /* ทำให้กล่องกว้างเต็มหน้าจอ */
+        margin-bottom: 8px; /* ระยะห่างระหว่างกล่อง */
     }
 }
